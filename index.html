@@ -7,12 +7,14 @@
   <meta name="description" content="Open-source campus engineering collective at UNC Charlotte." />
   <link rel="icon" href="assets/favicon.ico" />
 
+  <!-- General Sans via Fontshare -->
   <link rel="preconnect" href="https://api.fontshare.com" />
   <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- NAV -->
   <header id="site-header">
     <div class="header-container">
       <button data-route="home" class="nav-logo-box">ns</button>
@@ -25,59 +27,63 @@
   </header>
 
   <main>
+    <!-- HOME ROUTE -->
     <section id="route-home" class="route active">
       <div class="hero-layout">
+        
+        <!-- Hero Initial Viewport Area (Left Aligned Text, Right Aligned Watermark) -->
         <div class="hero-split-grid">
+          
           <div class="hero-left">
             <h1 class="hero-main-title">ninersoftware</h1>
             <h2 class="hero-subtitle">Software built for niners, by niners.</h2>
           </div>
-          <div class="hero-right-credibility">
-            <p>3.5k+ downloads across projects</p>
-            <p>seen on the Niner Times</p>
-            <p>featured in campus media</p>
-          </div>
+          
+          <!-- Massive background typography watermark -->
+          <div class="hero-watermark">ns</div>
+
         </div>
 
-        <div class="featured-project-card">
-          <div class="featured-card-flex">
-            <div class="featured-img-wrap">
-              <img src="src/assets/ninerREGChrome.png" alt="Niner Registration" onerror="this.style.display='none'; document.getElementById('featured-fallback-icon').style.display='flex';" />
-              <div id="featured-fallback-icon" class="featured-card-icon-fallback" style="display:none;">nr</div>
-            </div>
-            <div class="featured-info">
-              <div class="featured-badge">Featured Project</div>
-              <h3>Niner Registration</h3>
-              <p>Chrome extension with 400+ active installs. Features FOIA-obtained grade distribution charts, inline RateMyProfessors ratings, and a completely redesigned course search interface.</p>
-              <div class="featured-links">
-                <a href="https://github.com/ninersoftware/niner-registration" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                <a href="https://chromewebstore.google.com" target="_blank" rel="noopener noreferrer">Chrome Web Store ↗</a>
+        <!-- Wrap the header and the card together so the global layout gap doesn't split them apart -->
+        <div class="featured-section-wrapper">
+          
+          <!-- Featured Projects Header Outside Layout Card -->
+          <div class="featured-outer-header">
+              <h2>featured projects</h2>
+          </div>
+
+          <!-- Featured Projects Slider Card Container -->
+          <div class="featured-project-card">
+            <div class="featured-card-flex">
+              
+              <!-- Left Side: Clean Typography Metadata to align perfectly with header -->
+              <div class="featured-info">
+                <h3 id="viewer-project-title">Niner Registration</h3>
+                <p id="viewer-project-desc">Chrome extension with 400+ active installs. Features FOIA-obtained grade distribution charts, inline RateMyProfessors ratings, and a completely redesigned course search interface.</p>
+                <div id="viewer-project-links" class="featured-links">
+                  <a href="https://github.com/ninersoftware/niner-registration" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                  <a href="https://chromewebstore.google.com" target="_blank" rel="noopener noreferrer">Chrome Web Store ↗</a>
+                </div>
               </div>
+
+              <!-- Right Side: Expanded image display frame, counter, and navigation -->
+              <div class="featured-img-column">
+                <div id="viewer-project-index" class="viewer-counter-badge">1 / 2</div>
+                <div class="image-display-frame">
+                  <img id="viewer-active-img" src="imports/ninerREGChrome.png" alt="Featured Project Showcase" />
+                </div>
+                <div class="viewer-nav-buttons">
+                  <button id="viewer-btn-prev" class="viewer-arrow-btn">←</button>
+                  <button id="viewer-btn-next" class="viewer-arrow-btn">→</button>
+                </div>
+              </div>
+
             </div>
           </div>
-        </div>
 
-        <div class="stats-card-block">
-          <div class="stats-grid">
-            <div class="stat-box">
-              <div class="stat-num">500+</div>
-              <div class="stat-label">active users</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-num">12</div>
-              <div class="stat-label">contributors</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-num">2</div>
-              <div class="stat-label">live projects</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-num">100%</div>
-              <div class="stat-label">open source</div>
-            </div>
-          </div>
-        </div>
+        </div> <!-- Close the wrapper -->
 
+        <!-- CTA Action Call Section -->
         <div class="cta-action-block">
           <h3>Ready to build real software?</h3>
           <button data-route="join" class="btn-primary-action">Join the Collective →</button>
@@ -85,6 +91,7 @@
       </div>
     </section>
 
+    <!-- PROJECTS ROUTE -->
     <section id="route-projects" class="route">
       <div class="page-header">
         <h2>Projects</h2>
@@ -93,6 +100,7 @@
       <div id="projects-list" class="project-grid"></div>
     </section>
 
+    <!-- TEAM ROUTE -->
     <section id="route-team" class="route">
       <div class="page-header">
         <h2>Team</h2>
@@ -101,6 +109,7 @@
       <div id="team-list" class="team-grid"></div>
     </section>
 
+    <!-- JOIN ROUTE -->
     <section id="route-join" class="route">
       <div class="page-header">
         <h2>Join</h2>
@@ -118,6 +127,7 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-copyright">
       &copy; 2026 ninersoftware
