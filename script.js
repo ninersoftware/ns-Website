@@ -38,7 +38,7 @@ const PROJECTS = [
   },
   {
     name: "Gold Mine UNCC",
-    image: "assets/goldMineUNCC.png", // <--- Image placeholder for the projects list
+    image: "assets/goldMineUNCC.png",
     description: "Embeds RateMyProfessors data directly into UNCC's course catalog. GraphQL API, MutationObserver content script, and a 3-day Chrome storage cache. Shipped v1 with 400+ installs.",
     tags: [],
     active: true,
@@ -86,12 +86,10 @@ function navigate(route) {
   const ROUTES = ["home", "projects", "team", "join"];
   if (!ROUTES.includes(route)) route = "home";
 
-  // Toggle subpage visibility
   document.querySelectorAll(".route").forEach((el) => {
     el.classList.toggle("active", el.id === `route-${route}`);
   });
 
-  // Dynamically update active states across all navbar options
   document.querySelectorAll(".nav-btn").forEach((el) => {
     el.classList.toggle("active", el.dataset.route === route);
   });
@@ -176,7 +174,6 @@ document.addEventListener("click", (e) => {
   const el = e.target.closest("[data-route]");
   if (!el) return;
   
-  // Guard clause to let slide pagination arrows bypass route navigation entirely
   if (el.classList.contains("viewer-arrow-btn")) return;
   
   e.preventDefault();
