@@ -3,7 +3,7 @@ const FEATURED_SLIDES = [
   {
     title: "Niner Registration",
     desc: "From the creator of NinerRatings, Niner Registration is the expanded all-in-one registration tool for Charlotte students. Features grade distribution charts, inline RateMyProfessors ratings, calendar builder, and a completely redesigned course overview.",
-    file: "assets/ninerREGChrome.png",
+    file: "assets/ninerRegChrome.png",
     links: [
       { label: "GitHub ↗", url: "https://github.com/ninersoftware/niner-registration" },
       { label: "Chrome ↗", url: "https://chromewebstore.google.com" },
