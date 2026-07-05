@@ -61,6 +61,7 @@ const PROJECTS = [
 const TEAM = [
   {
     name: "Austin Mangold",
+    image: "assets/austin.png",
     role: "Founder & President",
     bio: "Junior student studying Computer Science, current lead teaching and research assistant. Built NinerRatings & Niner Registration.",
     links: [
@@ -70,6 +71,7 @@ const TEAM = [
   },
   {
     name: "Aakash Shah",
+    image: "assets/aakash.png",
     role: "Vice President",
     bio: "Senior student studying Computer Science, current Microsoft intern. Built the UNCC Gold Mine app, with over 3k+ downloads.",
     links: [
