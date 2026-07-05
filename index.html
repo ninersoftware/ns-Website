@@ -37,6 +37,11 @@
           <div class="hero-left">
             <h1 class="hero-main-title">ninersoftware</h1>
             <h2 class="hero-subtitle">Software built for niners, by niners.</h2>
+            <div class="hero-right-credibility">
+              <p>3.5k+ downloads across projects</p>
+              <p>seen on the Niner Times</p>
+              <p>featured in campus media</p>
+            </div>
           </div>
           
           <!-- Massive background typography watermark -->
@@ -44,7 +49,38 @@
 
         </div>
 
-        <!-- Wrap the header and the card together so the global layout gap doesn't split them apart -->
+        <!-- ABOUT SECTION WRAPPER -->
+        <div class="featured-section-wrapper">
+          
+          <!-- About Section Header -->
+          <div class="featured-outer-header">
+              <h2>what is ninersoftware?</h2>
+          </div>
+
+          <!-- About Section Card Container -->
+          <div class="featured-project-card">
+            <div class="featured-card-flex">
+              
+              <!-- Left Side: About Text -->
+              <div class="about-card-text">
+                <p>ninersoftware is an open-source campus software collective at UNC Charlotte. We build high-quality, open-source software to solve real problems for students, faculty, and the campus community.</p>
+                <p>The idea of ninersoftware came about after the creation of NinerRatings, as a way for students to maintain the project. It has now flourished into a place where students can gain real experience and work on projects with real student users.</p>
+              </div>
+
+              <!-- Right Side: Static Image Block -->
+              <div class="featured-img-column">
+                <div class="image-display-frame">
+                  <!-- You can swap this src for any static image of the team or campus -->
+                  <img src="assets/nsLogos_.png" alt="About NinerSoftware" />
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div> <!-- Close About Wrapper -->
+
+        <!-- FEATURED PROJECTS WRAPPER -->
         <div class="featured-section-wrapper">
           
           <!-- Featured Projects Header Outside Layout Card -->
@@ -59,7 +95,7 @@
               <!-- Left Side: Clean Typography Metadata to align perfectly with header -->
               <div class="featured-info">
                 <h3 id="viewer-project-title">Niner Registration</h3>
-                <p id="viewer-project-desc">Chrome extension with 400+ active installs. Features FOIA-obtained grade distribution charts, inline RateMyProfessors ratings, and a completely redesigned course search interface.</p>
+                <p id="viewer-project-desc">From the creator of NinerRatings, Niner Registration is the expanded all-in-one registration tool for Charlotte students. Features grade distribution charts, inline RateMyProfessors ratings, calendar builder, and a completely redesigned course overview.</p>
                 <div id="viewer-project-links" class="featured-links">
                   <a href="https://github.com/ninersoftware/niner-registration" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                   <a href="https://chromewebstore.google.com" target="_blank" rel="noopener noreferrer">Chrome Web Store ↗</a>
@@ -81,12 +117,12 @@
             </div>
           </div>
 
-        </div> <!-- Close the wrapper -->
+        </div> <!-- Close Featured Projects Wrapper -->
 
         <!-- CTA Action Call Section -->
         <div class="cta-action-block">
-          <h3>Ready to build real software?</h3>
-          <button data-route="join" class="btn-primary-action">Join the Collective →</button>
+          <h3>Interested?</h3>
+          <button data-route="join" class="btn-primary-action">Fall 2026 Form →</button>
         </div>
       </div>
     </section>
@@ -95,7 +131,6 @@
     <section id="route-projects" class="route">
       <div class="page-header">
         <h2>Projects</h2>
-        <p class="page-desc">Everything we ship is open source.</p>
       </div>
       <div id="projects-list" class="project-grid"></div>
     </section>
@@ -104,7 +139,6 @@
     <section id="route-team" class="route">
       <div class="page-header">
         <h2>Team</h2>
-        <p class="page-desc">The people building NinerSoftware.</p>
       </div>
       <div id="team-list" class="team-grid"></div>
     </section>
@@ -113,14 +147,13 @@
     <section id="route-join" class="route">
       <div class="page-header">
         <h2>Join</h2>
-        <p class="page-desc">We accept students of all experience levels. If you want to build real software used by real people, this is the place.</p>
+        <p class="page-desc">This form is to gauge interest for the club. Development may be open to join either in the Fall, or the Spring.</p>
       </div>
-      <span class="interest-form-label">Interest Form</span>
       <div class="gform-containment-box">
         <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSc0NRmEKxqV5BqJvZH4zGxK5gQkZYZ5qZYZ5qZYZ5qZYZ5qZYZ5qZYZ/viewform?embedded=true"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfD_ymOQxAV2Se8dr-L-Fzno-XspJknIz3TseCs3GizgcZx0A/viewform?usp=dialog"
           height="560"
-          title="NinerSoftware Interest Form">
+          title="ninersoftware Interest Form">
           Loading form…
         </iframe>
       </div>

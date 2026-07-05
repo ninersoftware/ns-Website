@@ -2,17 +2,17 @@
 const FEATURED_SLIDES = [
   {
     title: "Niner Registration",
-    desc: "A browser extension that features FOIA-obtained grade distribution charts, inline RateMyProfessors ratings, and a redesigned course presentation interface.",
-    file: "assets/ninerRegChrome.png",
+    desc: "From the creator of NinerRatings, Niner Registration is the expanded all-in-one registration tool for Charlotte students. Features grade distribution charts, inline RateMyProfessors ratings, calendar builder, and a completely redesigned course overview.",
+    file: "assets/ninerREGChrome.png",
     links: [
       { label: "GitHub ↗", url: "https://github.com/ninersoftware/niner-registration" },
       { label: "Chrome ↗", url: "https://chromewebstore.google.com" },
-      { label: "Firefox ↗ ", url: "google.com"}
+      { label: "Firefox ↗", url: "https://chromewebstore.google.com" }
     ]
   },
   {
-    title: "Gold Mine",
-    desc: "Gold Mine is a comprehensive campus companion app for UNC Charlotte students, featuring real-time information on UREC gym status, class schedules, campus maps, and student discounts.",
+    title: "Gold Mine UNCC",
+    desc: "Gold Mine is a comprehensive campus companion app for UNC Charlotte students, featuring real-time information on UREC gym status, class schedules, campus maps, and student discounts. The app seamlessly integrates university branding while providing essential tools like study room booking, dining options, and social event tracking, all customizable through a user-friendly interface that adapts to both light and dark modes.",
     file: "assets/goldMineUNCC.png", 
     links: [
       { label: "App Store ↗", url: "https://apps.apple.com/us/app/gold-mine-uncc/id6744618754" }
@@ -22,44 +22,58 @@ const FEATURED_SLIDES = [
 
 let currentSlideIdx = 0;
 
-// Subpage Render Lists Data
+// Subpage Render Lists Data (Images added here)
 const PROJECTS = [
   {
     name: "Niner Registration",
-    description: "A Chrome extension that supercharges UNC Charlotte's Self Service registration portal. Features grade history charts powered by FOIA-obtained data, RMP ratings inline, and a redesigned course search UI.",
-    tags: ["Chrome Extension", "Active"],
+    image: "assets/ninerREGChrome.png",
+    description: "The all-in-one registration tool: a browser extesion that features RMP data in-line, grade data spanning back to 2015, and exportable schedules for Google & Apple Calendar +",
+    tags: [],
     active: true,
     links: [
       { label: "GitHub", url: "https://github.com/ninersoftware/niner-registration" },
-      { label: "Chrome Web Store", url: "https://chromewebstore.google.com" }
+      { label: "Chrome Web Store", url: "https://chromewebstore.google.com/NinerRatings" },
+      { label: "Firefox", url: "firefox.com"}
     ]
   },
   {
-    name: "Niner Ratings",
+    name: "Gold Mine UNCC",
+    image: "assets/goldMineUNCC.png", // <--- Image placeholder for the projects list
     description: "Embeds RateMyProfessors data directly into UNCC's course catalog. GraphQL API, MutationObserver content script, and a 3-day Chrome storage cache. Shipped v1 with 400+ installs.",
-    tags: ["Chrome Extension", "Merged into Niner Registration"],
+    tags: [],
+    active: true,
+    links: [
+      { label: "App Store", url: "https://apps.apple.com/us/app/gold-mine-uncc/id6744618754" },
+    ]
+  },
+  {
+    name: "NinerRatings",
+    image: "assets/ninerRatings.jpeg",
+    description: "Embeds RateMyProfessors data directly into UNCC's course catalog, merged deveopment into Niner Registration.",
+    tags: [],
     active: false,
     links: [
-      { label: "GitHub", url: "https://github.com/ninersoftware/niner-ratings" }
+      { label: "GitHub", url: "https://github.com/ausmango/NinerRatings" }
     ]
   }
 ];
 
 const TEAM = [
   {
-    name: "Austin",
+    name: "Austin Mangold",
     role: "Founder & President",
-    bio: "Rising junior in CS (Systems & Networks). Built Niner Ratings from scratch and leads all NinerSoftware initiatives.",
+    bio: "Junior student studying Computer Science, current lead teaching and research assistant. Built NinerRatings & Niner Registration.",
     links: [
-      { label: "GitHub", url: "https://github.com" },
-      { label: "LinkedIn", url: "https://linkedin.com" }
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/austmang/" },
+      { label: "GitHub", url: "https://github.com/ausmango" }
     ]
   },
   {
     name: "Aakash Shah",
-    role: "VP of Engineering",
-    bio: "Author of Gold Mine (UNCC app), incoming Microsoft intern. Leads engineering standards and mentorship across the org.",
+    role: "Vice President",
+    bio: "Senior student studying Computer Science, current Microsoft intern. Built the UNCC Gold Mine app, with over 3k+ downloads.",
     links: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/aakash--shah/"},
       { label: "GitHub", url: "https://github.com" }
     ]
   }
@@ -117,16 +131,24 @@ function initSubpageLists() {
   if (projContainer) {
     projContainer.innerHTML = PROJECTS.map(p => `
       <div class="project-card">
-        <div>
-          <div class="project-name">${p.name}</div>
-          <div class="project-desc">${p.description}</div>
+        
+        <!-- Left Side: Typography and Metadata -->
+        <div class="featured-info">
+          <h3 class="project-name">${p.name}</h3>
+          <p class="project-desc">${p.description}</p>
           <div class="project-meta">
             ${p.tags.map(t => `<span class="tag ${!p.active ? 'inactive' : ''}">${t}</span>`).join('')}
           </div>
+          <div class="featured-links">
+            ${p.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer">${l.label} ↗</a>`).join('')}
+          </div>
         </div>
-        <div class="project-links">
-          ${p.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="project-link">${l.label} ↗</a>`).join('')}
+
+        <!-- Right Side: Expandable Thumbnail Image -->
+        <div class="project-list-img-frame">
+          <img src="${p.image}" alt="${p.name} Preview Screenshot" />
         </div>
+
       </div>
     `).join('');
   }
@@ -136,12 +158,11 @@ function initSubpageLists() {
     teamContainer.innerHTML = TEAM.map(m => `
       <div class="team-member">
         <div class="member-role">${m.role}</div>
-        <div>
-          <div class="member-name">${m.name}</div>
-          <div class="member-bio">${m.bio}</div>
-          <div class="member-links">
-            ${m.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="member-link">${l.label} ↗</a>`).join('')}
-          </div>
+        <div class="member-photo">${m.image ? `<img src="${m.image}" alt="${m.name}" />` : 'photo'}</div>
+        <div class="member-name">${m.name}</div>
+        <div class="member-bio">${m.bio}</div>
+        <div class="member-links">
+          ${(m.links || []).map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="member-link">${l.label} ↗</a>`).join('')}
         </div>
       </div>
     `).join('');
