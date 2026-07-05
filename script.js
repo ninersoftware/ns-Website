@@ -26,7 +26,7 @@ let currentSlideIdx = 0;
 const PROJECTS = [
   {
     name: "Niner Registration",
-    image: "assets/ninerREGChrome.png",
+    image: "assets/ninerRegChrome.png",
     description: "The all-in-one registration tool: a browser extesion that features RMP data in-line, grade data spanning back to 2015, and exportable schedules for Google & Apple Calendar +",
     tags: [],
     active: true,
