@@ -453,9 +453,9 @@ footer {
   .nav-logo-box { width: 2.75rem; height: 2.75rem; font-size: 1.1rem; }
   .nav-btn { font-size: 0.9rem; padding: 0.4rem 0.6rem; }
   nav { gap: 0.25rem; }
-  .hero-split-grid { flex-direction: column; min-height: 100vh; padding-top: 0; padding-bottom: 0; gap: 1.5rem; justify-content: center; align-items: center; }
+  .hero-split-grid { flex-direction: column; min-height: 100vh; padding-top: 4rem; padding-bottom: 0; gap: 0rem; justify-content: center; align-items: center; }
   .hero-main-title { text-align: center; }
-  .hero-watermark { display: block; font-size: 60vw; text-align: center; opacity: 1; color: var(--green); width: 100%; order: 1; }
+  .hero-watermark { display: block; font-size: 60vw; text-align: center; opacity: 1; color: var(--green); width: 100%; order: 1; margin-bottom: -0.5rem;}
   .hero-left { max-width: 100%; align-items: center; text-align: center; order: 2; gap: 0.75rem; }
   .hero-subtitle { font-size: clamp(1.1rem, 4vw, 1.5rem); }
   .hero-layout { gap: 3rem; padding-bottom: 3rem; }
@@ -471,7 +471,7 @@ footer {
   .project-name { text-align: center; }
   .project-desc { text-align: center; }
   .featured-links { justify-content: center; }
-  .about-card-text { align-items: flex-start; text-align: left; }
+  .about-card-text { align-items: flex-start; text-align: center; }
   .team-grid { justify-content: center; gap: 2rem; }
   .team-member { align-items: center; }
   footer { flex-direction: column; gap: 1rem; align-items: flex-start; padding-bottom: 2rem; }
