@@ -319,7 +319,7 @@ main {
 .page-desc { font-size: 1rem; color: var(--muted); max-width: 52ch; }
 .project-card {
   background: var(--white);
-  padding: 3rem;
+  padding: 2rem var(--pad);
   margin: 0 calc(var(--pad) * -1) 2rem calc(var(--pad) * -1);
   display: flex;
   flex-direction: row;
