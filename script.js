@@ -39,7 +39,7 @@ const PROJECTS = [
   {
     name: "Gold Mine UNCC",
     image: "assets/goldMineUNCC.png",
-    description: "Embeds RateMyProfessors data directly into UNCC's course catalog. GraphQL API, MutationObserver content script, and a 3-day Chrome storage cache. Shipped v1 with 400+ installs.",
+    description: "The comprehsnive campus app for Charlotte students. Featuring real-time embedded data such as gym and parking status, campus maps, and student discounts. Access study room booking and much more.",
     tags: [],
     active: true,
     links: [
