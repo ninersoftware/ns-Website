@@ -63,7 +63,7 @@ const TEAM = [
     name: "Austin Mangold",
     image: "assets/austin.png",
     role: "Founder & President",
-    bio: "Junior student studying Computer Science, current lead teaching and research assistant. Built NinerRatings & Niner Registration.",
+    bio: "Junior student studying Computer Science, current Deltek intern. Built NinerRatings, expanded development into Niner Registration.",
     links: [
       { label: "LinkedIn", url: "https://www.linkedin.com/in/austmang/" },
       { label: "GitHub", url: "https://github.com/ausmango" }
@@ -76,7 +76,17 @@ const TEAM = [
     bio: "Senior student studying Computer Science, current Microsoft intern. Built the UNCC Gold Mine app, with over 3k+ downloads.",
     links: [
       { label: "LinkedIn", url: "https://www.linkedin.com/in/aakash--shah/"},
-      { label: "GitHub", url: "https://github.com" }
+      { label: "GitHub", url: "https://github.com/vvkash" }
+    ]
+  }, 
+  {
+    name: "Kareem Saif",
+    image: "assets/kareem.png",
+    role: "Treasurer",
+    bio: "Junior student studying Computer Science, current Ingersoll Rand intern. Assisted development in Niner Registration.",
+    links: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/kareemsaif/"},
+      { label: "GitHub", url: "https://github.com/KSaifStack"}
     ]
   }
 ];
