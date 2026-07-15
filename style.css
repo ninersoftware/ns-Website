@@ -136,14 +136,17 @@ main {
   max-width: 24ch;
 }
 .hero-right-credibility {
-  display: none;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: var(--green);
+  font-weight: 400;
+  font-style: italic;
 }
 .hero-watermark {
   font-size: clamp(16rem, 28vw, 24rem);
   font-weight: 700;
   font-style: normal;
   color: var(--green);
-  opacity: 0.10; 
   line-height: 0.8;
   letter-spacing: -0.06em;
   user-select: none;
@@ -176,7 +179,7 @@ main {
 }
 .featured-project-card {
   background: var(--white);
-  padding: 3rem;
+  padding: 3rem var(--pad);
   margin: 0 calc(var(--pad) * -1) 0 calc(var(--pad) * -1);
 }
 .featured-section-wrapper:first-of-type .featured-project-card {
@@ -190,7 +193,6 @@ main {
   flex-direction: column;
   gap: 1.25rem;
   width: fit-content;
-  margin-inline: auto;
   text-align: left;
 }
 .about-card-text p {
