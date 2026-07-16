@@ -523,12 +523,12 @@ footer {
   .desktop-nav { display: none; }
   .mobile-menu-toggle { display: flex; }
   .mobile-menu-popup { display: flex; margin-right: 0.35rem; }
-  .hero-split-grid { flex-direction: column; min-height: 100vh; padding-top: 4.5rem; padding-bottom: 0; gap: 0rem; justify-content: center; align-items: center; }
-  .hero-main-title { text-align: center; opacity: 1;}
-  .hero-watermark { display: block; font-size: 75vw; align-items: center; text-align: center; opacity: 1; color: var(--green); width: 100%; order: 1; margin-bottom: -1.5rem;}
-  .hero-left { max-width: 100%; align-items: center; text-align: center; order: 2; gap: 0.75rem; }
-  .hero-subtitle { font-size: clamp(1.1rem, 4vw, 1.5rem);}
-  .hero-right-credibility {font-size: 12px;}
+  .hero-split-grid { flex-direction: column; min-height: 85vh; padding-top: 1rem; padding-bottom: 3rem; gap: 1rem; justify-content: center; align-items: center; }
+  .hero-left { display: contents; }
+  .hero-subtitle { font-size: clamp(1.1rem, 4vw, 1.5rem); text-align: center; order: 1; margin-bottom: -2rem; font-style: italic; opacity: 1;}
+  .hero-watermark { display: block; font-size: 75vw; align-items: center; text-align: center; opacity: 1; color: var(--green); width: 100%; order: 2; margin-bottom: 3.5rem; }
+  .hero-main-title { text-align: center; opacity: 1; order: 3; margin-top: -6.5rem;}
+  .hero-right-credibility { font-size: 12px; text-align: center; order: 4; }
   .hero-layout { gap: 3rem; padding-bottom: 3rem; }
   .featured-outer-header h2 { text-align: center; }
   .page-header { align-items: center; text-align: center; }
