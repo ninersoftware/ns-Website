@@ -38,7 +38,7 @@ const PROJECTS = [
   {
     name: "Niner Registration",
     image: "assets/ninerRegChrome.png",
-    description: "The all-in-one registration tool: a browser extesion that features RMP data in-line, grade data spanning back to 2015, and exportable schedules for Google & Apple Calendar +",
+    description: "The all-in-one registration tool: a browser extension that features RMP data in-line, grade data spanning back to 2015, and exportable schedules for Google & Apple Calendar +",
     tags: [],
     active: true,
     links: [
@@ -50,7 +50,7 @@ const PROJECTS = [
   {
     name: "Gold Mine UNCC",
     image: "assets/goldMineUNCC.png",
-    description: "The comprehsnive campus app for Charlotte students. Featuring real-time embedded data such as gym and parking status, campus maps, and student discounts. Access study room booking and much more.",
+    description: "The comprehensive campus app for Charlotte students. Featuring real-time embedded data such as gym and parking status, campus maps, and student discounts. Access study room booking and much more.",
     tags: [],
     active: true,
     links: [
@@ -60,8 +60,8 @@ const PROJECTS = [
   {
     name: "NinerRatings",
     image: "assets/ninerRatings.jpeg",
-    description: "Embeds RateMyProfessors data directly into UNCC's course catalog, merged deveopment into Niner Registration.",
-    tags: [],
+    description: "Embeds RateMyProfessors data directly into UNCC's course catalog, merged development into Niner Registration.",
+    tags: ["merged development"],
     active: false,
     links: [
       { label: "GitHub", url: "https://github.com/ausmango/NinerRatings" }
@@ -103,7 +103,7 @@ const TEAM = [
 ];
 
 // NAVIGATION VIEW CONTROLLER SWITCHER
-function navigate(route) {
+function navigate(route, pushState = true) {
   const ROUTES = ["home", "projects", "team", "join"];
   if (!ROUTES.includes(route)) route = "home";
 
@@ -114,6 +114,12 @@ function navigate(route) {
   document.querySelectorAll(".nav-btn").forEach((el) => {
     el.classList.toggle("active", el.dataset.route === route);
   });
+
+  document.title = route === "home" ? "ninersoftware" : `ninersoftware - ${route}`
+
+  if (pushState) {
+    window.location.hash = route === "home" ? "" : route;
+  }
 
   window.scrollTo({ top: 0 });
 }
@@ -189,6 +195,19 @@ function initSubpageLists() {
     `).join('');
   }
 }
+
+function routeFromHash() {
+  const hash = window.location.hash.replace("#", "");
+  return hash || "home";
+}
+
+window.addEventListener("popstate", () => navigate(routeFromHash(), false));
+window.addEventListener("hashchange", () => navigate(routeFromHash(), false));
+
+document.addEventListener("DOMContentLoaded", () => {
+  navigate(routeFromHash(), false);
+  initSubpageLists();
+});
 
 // GLOBAL INTERACTION ROUTER
 document.addEventListener("click", (e) => {
