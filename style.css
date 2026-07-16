@@ -472,7 +472,7 @@ footer {
   .featured-card-flex { flex-direction: column-reverse; gap: 2rem; align-items: center; }
   .image-display-frame { width: 100%; max-width: 100%; }
   .featured-info { align-items: center; text-align: center; }
-  .project-name { text-align: center; }
+  .project-name { text-align: center; display: none; }
   .project-desc { text-align: center; }
   .featured-links { justify-content: center; }
   .about-card-text { align-items: flex-start; text-align: center; }
