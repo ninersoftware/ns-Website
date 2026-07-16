@@ -25,6 +25,17 @@ let currentSlideIdx = 0;
 // Subpage Render Lists Data (Images added here)
 const PROJECTS = [
   {
+    name: "Dine49",
+    image: "assets/dine49.png",
+    description: "(IN DEVELOPMENT) Out with the old, in with the new: a user-oriented app to be informed about dining options on campus.",
+    tags: [],
+    active: true,
+    links: [
+      { label: "App Store" },
+      { label: "Google Play" },
+    ] 
+  },
+  {
     name: "Niner Registration",
     image: "assets/ninerRegChrome.png",
     description: "The all-in-one registration tool: a browser extesion that features RMP data in-line, grade data spanning back to 2015, and exportable schedules for Google & Apple Calendar +",

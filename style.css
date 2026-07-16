@@ -2,7 +2,7 @@
   --white: #ffffff;
   --bg-nav: rgba(255, 255, 255, 0.75); 
   --ink: #101820;
-  --green: #046A38;
+  --green: hsl(151, 93%, 22%);
   --muted: #6b7280;
   --border-light: rgba(16, 24, 32, 0.12);
   --font: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -334,10 +334,11 @@ main {
   aspect-ratio: 16 / 9; 
   border-radius: var(--radius);
   overflow: hidden;
-  border: 1px solid var(--border-light);
+  box-shadow: 0 8px 20px rgba(16, 24, 32, 0.08);
   background: var(--white);
   transition: border-color 0.2s ease;
   flex-shrink: 0;
+
 }
 .project-list-img-frame img {
   width: 100%;
