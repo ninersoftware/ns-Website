@@ -101,6 +101,70 @@ main {
   gap: 4rem;
   padding-bottom: 5rem;
 }
+.mobile-menu-toggle {
+  display: none;
+  width: 3rem;
+  height: 3rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.mobile-menu-toggle span {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background: var(--green);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.mobile-menu-toggle.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.mobile-menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-menu-toggle.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-menu-popup {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: var(--pad);
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(16, 24, 32, 0.12);
+  flex-direction: column;
+  min-width: 10rem;
+  padding: 0.5rem;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  pointer-events: none;
+}
+.mobile-menu-popup.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.mobile-menu-item {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-radius: 6px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.mobile-menu-item:hover,
+.mobile-menu-item.active {
+  background: #f9fafb;
+  color: var(--green);
+  font-weight: 700;
+}
 .hero-split-grid {
   display: flex; 
   flex-direction: row;
@@ -453,9 +517,12 @@ footer {
 }
 @media (max-width: 768px) {
   #site-header { padding: 0.75rem var(--pad); }
-  .nav-logo-box { width: 2.75rem; height: 2.75rem; font-size: 1.1rem; }
+  .nav-logo-box { width: 3rem; height: 3rem; font-size: 1.5rem; }
   .nav-btn { font-size: 0.9rem; padding: 0.4rem 0.6rem; }
   nav { gap: 0.25rem; }
+  .desktop-nav { display: none; }
+  .mobile-menu-toggle { display: flex; }
+  .mobile-menu-popup { display: flex; margin-right: 0.35rem; }
   .hero-split-grid { flex-direction: column; min-height: 100vh; padding-top: 4.5rem; padding-bottom: 0; gap: 0rem; justify-content: center; align-items: center; }
   .hero-main-title { text-align: center; opacity: 1;}
   .hero-watermark { display: block; font-size: 75vw; align-items: center; text-align: center; opacity: 1; color: var(--green); width: 100%; order: 1; margin-bottom: -1.5rem;}

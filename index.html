@@ -16,12 +16,23 @@
   <header id="site-header">
     <div class="header-container">
       <button data-route="home" class="nav-logo-box">ns</button>
-      <nav>
+      <nav class="desktop-nav">
         <button data-route="projects" class="nav-btn">projects</button>
         <button data-route="team" class="nav-btn">team</button>
         <button data-route="join" class="nav-btn">join</button>
       </nav>
+      <button id="mobile-menu-toggle" class ="mobile-menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+
+    <nav id="mobile-menu-popup" class="mobile-menu-popup">
+      <button data-route="projects" class="nav-btn">projects</button>
+      <button data-route="team" class="nav-btn">team</button>
+      <button data-route="join" class="nav-btn">join</button>
+    </nav>
   </header>
 
   <main>

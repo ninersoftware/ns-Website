@@ -124,6 +124,22 @@ function navigate(route, pushState = true) {
   window.scrollTo({ top: 0 });
 }
 
+const menuToggle = document.getElementById("mobile-menu-toggle");
+const menuPopup = document.getElementById("mobile-menu-popup");
+
+menuToggle?.addEventListener("click", (e) => {
+  e.stopPropagation();
+  menuToggle.classList.toggle("open");
+  menuPopup.classList.toggle("open");
+});
+
+document.addEventListener("click", (e) => {
+  if (!menuPopup?.contains(e.target) && !menuToggle?.contains(e.target)) {
+    menuToggle?.classList.remove("open");
+    menuPopup?.classList.remove("open");
+  }
+});
+
 // SLIDER RENDER FUNCTION
 function renderActiveFeaturedSlide() {
   const imgElement = document.getElementById("viewer-active-img");
@@ -218,6 +234,9 @@ document.addEventListener("click", (e) => {
   
   e.preventDefault();
   navigate(el.dataset.route);
+
+  menuToggle?.classList.remove("open");
+  menuPopup?.classList.remove("open");
 });
 
 // INITIALIZE CONTROLS ON LIFE CYCLE LOAD
