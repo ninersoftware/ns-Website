@@ -17,6 +17,7 @@
     <div class="header-container">
       <button data-route="home" class="nav-logo-box">ns</button>
       <nav class="desktop-nav">
+        <button data-route="news" class="nav-btn">news</button>
         <button data-route="projects" class="nav-btn">projects</button>
         <button data-route="team" class="nav-btn">team</button>
         <button data-route="join" class="nav-btn">join</button>
@@ -29,6 +30,7 @@
     </div>
 
     <nav id="mobile-menu-popup" class="mobile-menu-popup">
+      <button data-route="news" class="mobile-menu-item">news</button>
       <button data-route="projects" class="nav-btn">projects</button>
       <button data-route="team" class="nav-btn">team</button>
       <button data-route="join" class="nav-btn">join</button>
@@ -94,7 +96,7 @@
           <div class="featured-card-flex">
 
             <div class="about-card-text">
-              <p>Introdocing Dine49, a campus dining app that shows exactly what's in the dining hall, with nutrition info and alerts for your favorite foods. Better than you-know-who.</p>
+              <p>Introducing Dine49, a campus dining app that shows exactly what's in the dining hall, with nutrition info and alerts for your favorite foods. Better than you-know-who.</p>
               <p>It's in early development. Want to see everything else we're working on?</p>
               <a href="#projects" data-route="projects" class="dine49-projects-link">Check out our projects →</a>
             </div>
@@ -116,6 +118,13 @@
       </div>
     </section>
 
+    <!-- NEWS ROUTE -->
+    <section id="route-news" class="route">
+      <div class="page-header">
+        <h2>News</h2>
+      </div>
+      <div id="news-list" class="news-list"></div>
+    </section>
 
     <!-- PROJECTS ROUTE -->
     <section id="route-projects" class="route">

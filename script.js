@@ -31,7 +31,7 @@ const PROJECTS = [
     tags: [],
     active: true,
     links: [
-      
+
     ]
   },
   {
@@ -65,6 +65,14 @@ const PROJECTS = [
       { label: "GitHub", url: "https://github.com/ausmango/NinerRatings" }
     ]
   }
+];
+
+const NEWS = [
+  { date: "August 2026", title: "Fall 2026 kickoff - first meeting details coming soon" },
+  { date: "July 2026", title: "ninersoftware officially apart of Niner Engage"},
+  { date: "April 2026", title: "Idea of ninersoftware introduced"},
+  { date: "March 2026", title: "NinerRatings introduced and featured in the Niner Times"},
+  { date: "August 2025", title: "Gold Mine UNCC featured in the Niner Times"}
 ];
 
 const TEAM = [
@@ -102,7 +110,7 @@ const TEAM = [
 
 // NAVIGATION VIEW CONTROLLER SWITCHER
 function navigate(route, pushState = true) {
-  const ROUTES = ["home", "projects", "team", "join"];
+  const ROUTES = ["home", "news", "projects", "team", "join"];
   if (!ROUTES.includes(route)) route = "home";
 
   document.querySelectorAll(".route").forEach((el) => {
@@ -168,6 +176,16 @@ function renderActiveFeaturedSlide() {
 
 // SUBPAGE ENGINE BUILDERS
 function initSubpageLists() {
+  const newsContainer = document.getElementById("news-list");
+  if (newsContainer) {
+    newsContainer.innerHTML = NEWS.map(n => `
+      <div class="news-item">
+        <div class="news-date">${n.date}</div>
+        <div class="news-title">${n.title}</div>
+      </div>
+    `).join('');
+  }
+
   const projContainer = document.getElementById("projects-list");
   if (projContainer) {
     projContainer.innerHTML = PROJECTS.map(p => `
