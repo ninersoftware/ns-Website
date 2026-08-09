@@ -31,9 +31,8 @@ const PROJECTS = [
     tags: [],
     active: true,
     links: [
-      { label: "App Store" },
-      { label: "Google Play" },
-    ] 
+      
+    ]
   },
   {
     name: "Niner Registration",
@@ -43,8 +42,7 @@ const PROJECTS = [
     active: true,
     links: [
       { label: "GitHub", url: "https://github.com/ninersoftware/niner-registration" },
-      { label: "Chrome Web Store", url: "https://chromewebstore.google.com/NinerRatings" },
-      { label: "Firefox", url: "firefox.com"}
+      { label: "Chrome Web Store", url: "https://chromewebstore.google.com/detail/ninerratings/fiboihoabbagmckkhjbbeiaoiiimfaec?hl=en-US&pli=1" },
     ]
   },
   {
