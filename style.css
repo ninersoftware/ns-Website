@@ -151,7 +151,11 @@ main {
   pointer-events: auto;
 }
 .mobile-menu-item {
+  display: block;
+  width: 100%;
+  font-family: inherit;
   font-size: 1rem;
+  line-height: 1.2;
   font-weight: 500;
   color: var(--ink);
   padding: 0.75rem 1rem;
@@ -405,40 +409,109 @@ main {
   flex-direction: column;
   padding-bottom: 3rem;
 }
+.news-year {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 2.5rem;
+}
+.news-year:first-of-type { margin-top: 0; }
+.news-year-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.25rem;
+}
+.news-month {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 1.5rem;
+}
+.news-year-group > .news-month:first-child { margin-top: 0; }
 .news-item {
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
   align-items: baseline;
-  padding: 1.5rem var(--pad);
-  margin: 0 calc(var(--pad) * -1);
-  border-bottom: 1px solid var(--border-light);
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
 }
-.news-item:last-child { border-bottom: none; }
-.news-date {
-  font-size: 0.8rem;
+.news-item-text {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.news-link {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--green);
+  white-space: nowrap;
+}
+.news-link:hover { text-decoration: underline; }
+.job-board-header { margin-top: 3.5rem; }
+.job-board-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.job-role-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.75rem var(--pad);
+  margin: 0 calc(var(--pad) * -1);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+}
+.job-role-project {
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--green);
-  flex-shrink: 0;
-  width: 5rem;
+  margin-bottom: 0.35rem;
 }
-.news-title {
-  font-size: 1rem;
+.job-role-title {
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--ink);
+  margin-bottom: 0.35rem;
+}
+.job-role-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
   line-height: 1.5;
+  max-width: 44ch;
+}
+.job-role-apply {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--green);
+  white-space: nowrap;
+}
+.job-role-apply:hover { text-decoration: underline; }
+.job-board-empty {
+  border: 1px dashed var(--border-light);
+  border-radius: var(--radius);
+  padding: 3rem var(--pad);
+  text-align: center;
+}
+.job-board-empty p {
+  color: var(--muted);
+  font-size: 1rem;
 }
 .project-list-img-frame {
   width: 24rem;
-  aspect-ratio: 16 / 9; 
+  aspect-ratio: 16 / 9;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(16, 24, 32, 0.08);
   background: var(--white);
   transition: border-color 0.2s ease;
   flex-shrink: 0;
-
 }
 .project-list-img-frame img {
   width: 100%;
@@ -572,8 +645,13 @@ footer {
   .page-header h2 { text-align: center; }
   .featured-project-card { margin-left: 0; margin-right: 0; padding: 1.75rem 1.25rem; }
   .dine49-projects-link { align-self: center; width: fit-content; }
-  .news-item { flex-direction: column; gap: 0.35rem; padding: 1.25rem 1.25rem; margin: 0; text-align: center; }
-  .news-date { width: auto; }
+  .news-item { grid-template-columns: 3rem 1fr; row-gap: 0.25rem; }
+  .news-link { grid-column: 1 / -1; justify-self: start; margin-top: 0.15rem; }
+  .news-item { flex-wrap: wrap; }
+  .news-link { margin-left: auto; }
+  .job-role-card { flex-direction: column; align-items: flex-start; text-align: left; margin: 0; padding: 1.5rem 1.25rem; }
+  .job-role-desc { max-width: 100%; }
+  .job-role-apply { align-self: flex-start; }
   .project-card { margin-left: 0; margin-right: 0; padding: 1.75rem 1.25rem; flex-direction: column; gap: 1.5rem; align-items: center; text-align: center; }
   .project-list-img-frame { order: -1; width: 100%; max-width: 100%; }
   .featured-card-flex { flex-direction: column-reverse; gap: 2rem; align-items: center; }

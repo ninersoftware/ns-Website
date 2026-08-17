@@ -68,11 +68,15 @@ const PROJECTS = [
 ];
 
 const NEWS = [
-  { date: "August 2026", title: "Fall 2026 kickoff - first meeting details coming soon" },
-  { date: "July 2026", title: "ninersoftware officially apart of Niner Engage"},
-  { date: "April 2026", title: "Idea of ninersoftware introduced"},
-  { date: "March 2026", title: "NinerRatings introduced and featured in the Niner Times"},
-  { date: "August 2025", title: "Gold Mine UNCC featured in the Niner Times"}
+  { year: 2026, month: "August", title: "Fall 2026 kickoff — first meeting details coming soon" },
+  { year: 2026, month: "July", title: "ninersoftware officially part of Niner Engage" },
+  { year: 2026, month: "April", title: "Idea of ninersoftware introduced" },
+  { year: 2026, month: "March", title: "NinerRatings introduced and featured in the Niner Times", url: "https://www.ninertimes.com/news/ninerratings-a-new-addition-to-class-registration/article_8e4f4114-194b-476d-bc57-e95a2f3831a1.html" },
+  { year: 2025, month: "August", title: "Gold Mine UNCC featured in the Niner Times", url: "https://www.ninertimes.com/news/charlotte-student-launches-gold-mine-app-to-help-users-navigate-campus-life/article_8ac8772f-b3c0-4bce-a44e-c7a4bbbd7786.html" }
+];
+
+const ROLES = [
+
 ];
 
 const TEAM = [
@@ -117,7 +121,7 @@ function navigate(route, pushState = true) {
     el.classList.toggle("active", el.id === `route-${route}`);
   });
 
-  document.querySelectorAll(".nav-btn").forEach((el) => {
+  document.querySelectorAll(".nav-btn, .mobile-menu-item").forEach((el) => {
     el.classList.toggle("active", el.dataset.route === route);
   });
 
@@ -178,12 +182,30 @@ function renderActiveFeaturedSlide() {
 function initSubpageLists() {
   const newsContainer = document.getElementById("news-list");
   if (newsContainer) {
-    newsContainer.innerHTML = NEWS.map(n => `
-      <div class="news-item">
-        <div class="news-date">${n.date}</div>
-        <div class="news-title">${n.title}</div>
-      </div>
-    `).join('');
+    let html = "";
+    let lastYear = null;
+    let lastMonth = null;
+
+    NEWS.forEach(n => {
+      if (n.year !== lastYear) {
+        if (lastYear !== null) html += "</div>";
+        html += `<div class="news-year">${n.year}</div><div class="news-year-group">`;
+        lastYear = n.year;
+        lastMonth = null;
+      }
+      if (n.month !== lastMonth) {
+        html += `<div class="news-month">${n.month}</div>`;
+        lastMonth = n.month;
+      }
+      html += `
+        <div class="news-item">
+          <span class="news-item-text">${n.title}</span>
+          ${n.url ? `<a href="${n.url}" target="_blank" rel="noopener noreferrer" class="news-link">Read ↗</a>` : ""}
+        </div>`;
+    });
+    if (lastYear !== null) html += "</div>";
+
+    newsContainer.innerHTML = html;
   }
 
   const projContainer = document.getElementById("projects-list");
@@ -225,6 +247,26 @@ function initSubpageLists() {
         </div>
       </div>
     `).join('');
+  }
+  const jobBoardContainer = document.getElementById("job-board-list");
+  if (jobBoardContainer) {
+    if (ROLES.length === 0) {
+      jobBoardContainer.innerHTML = `
+        <div class="job-board-empty">
+          <p>No open positions right now, check back soon!</p>
+        </div>`;
+    } else {
+      jobBoardContainer.innerHTML = ROLES.map(r => `
+        <div class="job-role-card">
+          <div class="job-role-info">
+            <div class="job-role-project">${r.project}</div>
+            <h3 class="job-role-title">${r.title}</h3>
+            <p class="job-role-desc">${r.description}</p>
+          </div>
+          <a href="${r.formUrl}" target="_blank" rel="noopener noreferrer" class="job-role-apply">Apply ↗</a>
+        </div>
+      `).join('');
+    }
   }
 }
 
