@@ -68,11 +68,51 @@ const PROJECTS = [
 ];
 
 const NEWS = [
+  { year: 2026, month: "September", title: "ns: an introductory meeting | September 9th, Friday 386 @5:30PM" },
   { year: 2026, month: "August", title: "Fall 2026 kickoff — first meeting details coming soon" },
   { year: 2026, month: "July", title: "ninersoftware officially part of Niner Engage" },
   { year: 2026, month: "April", title: "Idea of ninersoftware introduced" },
   { year: 2026, month: "March", title: "NinerRatings introduced and featured in the Niner Times", url: "https://www.ninertimes.com/news/ninerratings-a-new-addition-to-class-registration/article_8e4f4114-194b-476d-bc57-e95a2f3831a1.html" },
   { year: 2025, month: "August", title: "Gold Mine UNCC featured in the Niner Times", url: "https://www.ninertimes.com/news/charlotte-student-launches-gold-mine-app-to-help-users-navigate-campus-life/article_8ac8772f-b3c0-4bce-a44e-c7a4bbbd7786.html" }
+];
+
+// Add future coverage here, newest first. Credit the original publication and author.
+// Optional: author: "Confirmed author name". Never use a guessed byline.
+// Thumbnail: set image to a local path such as "assets/story-thumbnail.jpg".
+// Leave image empty for a text-only row. Use imageAlt to describe the image.
+const PRESS = [
+  {
+    title: "NinerRatings rebrands as Niner Registration, sparking a broader student software collective",
+    date: "September 2026",
+    publication: "Annie Waskey: Niner Times",
+    image: "assets/thumbnail2.png",
+    imageAlt: "",
+    url: "https://www.ninertimes.com/news/ninerratings-a-new-addition-to-class-registration/article_8e4f4114-194b-476d-bc57-e95a2f3831a1.html"
+  },
+  {
+    title: "The Gold Mine’s one-year anniversary: Here’s what’s new",
+    date: "April 2026",
+    publication: "Deonna Dickens: Niner Times",
+    image: "assets/thumbnail4.png",
+    imageAlt: "",
+    url: "https://www.ninertimes.com/news/the-gold-mine-s-one-year-anniversary-here-s-what-s-new/article_cef68ac6-9bfa-49ab-8c8c-f8fccc4573f1.html"
+  },
+  {
+    title: "NinerRatings: A new addition to class registration",
+    date: "March 2026",
+    publication: "Annie Waskey: Niner Times",
+    image: "assets/thumbnail1.png",
+    imageAlt: "",
+    url: "https://www.ninertimes.com/news/ninerratings-a-new-addition-to-class-registration/article_8e4f4114-194b-476d-bc57-e95a2f3831a1.html"
+  },
+  {
+    title: "Charlotte student launches 'Gold Mine' App to help users navigate campus life",
+    date: "August 2025",
+    publication: "Deonna Dickens: Niner Times",
+    image: "assets/thumbnail3.png",
+    imageAlt: "",
+    url: "https://www.ninertimes.com/news/charlotte-student-launches-gold-mine-app-to-help-users-navigate-campus-life/article_8ac8772f-b3c0-4bce-a44e-c7a4bbbd7786.html"
+  }
 ];
 
 const ROLES = [
@@ -84,27 +124,27 @@ const TEAM = [
     name: "Austin Mangold",
     image: "assets/austin.png",
     role: "Founder & President",
-    bio: "Junior student studying Computer Science, current Deltek intern. Built NinerRatings, expanded development into Niner Registration.",
+    bio: "Junior student studying Computer Science, prev. @ Deltek. Built NinerRatings, expanded development into Niner Registration.",
     links: [
       { label: "LinkedIn", url: "https://www.linkedin.com/in/austmang/" },
-      { label: "GitHub", url: "https://github.com/ausmango" }
+      { label: "Website", url: "https://austinmangold.com/" }
     ]
   },
   {
     name: "Aakash Shah",
     image: "assets/aakash.png",
     role: "Vice President",
-    bio: "Senior student studying Computer Science, current Microsoft intern. Built the UNCC Gold Mine app, with over 3k+ downloads.",
+    bio: "Senior student studying Computer Science, current intern @ IBM, prev. @ Microsoft. Built the UNCC Gold Mine app, with over 3k+ downloads.",
     links: [
       { label: "LinkedIn", url: "https://www.linkedin.com/in/aakash--shah/"},
-      { label: "GitHub", url: "https://github.com/vvkash" }
+      { label: "Website", url: "https://aakashxyz.com/" }
     ]
   }, 
   {
     name: "Kareem Saif",
     image: "assets/kareem.png",
     role: "Treasurer",
-    bio: "Junior student studying Computer Science, current Ingersoll Rand intern. Assisted development in Niner Registration.",
+    bio: "Junior student studying Computer Science, current intern @ Ingersoll Rand. Co-developed Niner Market.",
     links: [
       { label: "LinkedIn", url: "https://www.linkedin.com/in/kareemsaif/"},
       { label: "GitHub", url: "https://github.com/KSaifStack"}
@@ -112,9 +152,35 @@ const TEAM = [
   }
 ];
 
+// DEVELOPERS: copy the example object into this list for each new member.
+// Use a local photo path, and remove any profile links you do not need.
+const DEVELOPERS = [
+ {
+    name: "Chand Mallangi",
+    image: "assets/chandpng.png",
+    role: "Full-Stack",
+    bio: "Junior student studying Computer Science, prev. intern @ Commscope, Superstars. Created Niner Market.",
+    links: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/gnanachand-mallangi" },
+      { label: "GitHub", url: "https://github.com/gmallang" }
+    ]
+ },
+ {
+    name: "Qudrat Siyal",
+    image: "assets/qudratjpg.jpg",
+    role: "UI/UX",
+    bio: "Graduate student studying Data Science. Previous intern at Project: Human City. UI/UX developer of Dine49.",
+    links: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/qudrat-siyal" },
+      { label: "GitHub", url: "https://github.com/qudratusa" }
+    ]
+ }
+];
+
 // NAVIGATION VIEW CONTROLLER SWITCHER
 function navigate(route, pushState = true) {
-  const ROUTES = ["home", "news", "projects", "team", "join"];
+  if (route === "news") route = "press"; // Preserve existing #news bookmarks.
+  const ROUTES = ["home", "press", "projects", "team", "join"];
   if (!ROUTES.includes(route)) route = "home";
 
   document.querySelectorAll(".route").forEach((el) => {
@@ -178,34 +244,47 @@ function renderActiveFeaturedSlide() {
   });
 }
 
+// Shared by Executive Board and Developers so their cards stay identical.
+function renderMembers(container, members) {
+  if (container) {
+    container.innerHTML = members.map(m => `
+      <div class="team-member">
+        <div class="member-role">${m.role}</div>
+        <div class="member-photo">${m.image ? `<img src="${m.image}" alt="${m.name}" />` : 'photo'}</div>
+        <div class="member-name">${m.name}</div>
+        <div class="member-bio">${m.bio}</div>
+        <div class="member-links">
+          ${(m.links || []).map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="member-link">${l.label} ↗</a>`).join('')}
+        </div>
+      </div>
+    `).join('');
+  }
+}
+
 // SUBPAGE ENGINE BUILDERS
 function initSubpageLists() {
-  const newsContainer = document.getElementById("news-list");
-  if (newsContainer) {
-    let html = "";
-    let lastYear = null;
-    let lastMonth = null;
-
-    NEWS.forEach(n => {
-      if (n.year !== lastYear) {
-        if (lastYear !== null) html += "</div>";
-        html += `<div class="news-year">${n.year}</div><div class="news-year-group">`;
-        lastYear = n.year;
-        lastMonth = null;
-      }
-      if (n.month !== lastMonth) {
-        html += `<div class="news-month">${n.month}</div>`;
-        lastMonth = n.month;
-      }
-      html += `
-        <div class="news-item">
-          <span class="news-item-text">${n.title}</span>
-          ${n.url ? `<a href="${n.url}" target="_blank" rel="noopener noreferrer" class="news-link">Read ↗</a>` : ""}
-        </div>`;
-    });
-    if (lastYear !== null) html += "</div>";
-
-    newsContainer.innerHTML = html;
+  const pressContainer = document.getElementById("press-list");
+  if (pressContainer) {
+    pressContainer.innerHTML = PRESS.map(story => `
+      <article class="press-story">
+        <a class="press-story-link${story.image ? ' has-thumbnail' : ''}" href="${story.url}" target="_blank" rel="noopener noreferrer">
+          ${story.image ? `<img class="press-thumbnail" src="${story.image}" alt="${story.imageAlt || ''}" loading="lazy" decoding="async" />` : ''}
+          <div class="press-story-copy">
+            <h3>${story.title} <span class="press-external" aria-hidden="true">↗</span></h3>
+            <p class="press-story-meta">${story.publication} · ${story.date}${story.author ? ' · ' + story.author : ''}</p>
+          </div>
+        </a>
+      </article>
+    `).join('');
+  }
+  const announcementsContainer = document.getElementById("announcements-list");
+  if (announcementsContainer) {
+    announcementsContainer.innerHTML = NEWS.filter(item => !item.url).map(item => `
+      <div class="press-announcement">
+        <span class="press-announcement-date">${item.month} ${item.year}</span>
+        <p>${item.title}</p>
+      </div>
+    `).join('');
   }
 
   const projContainer = document.getElementById("projects-list");
@@ -234,20 +313,8 @@ function initSubpageLists() {
     `).join('');
   }
 
-  const teamContainer = document.getElementById("team-list");
-  if (teamContainer) {
-    teamContainer.innerHTML = TEAM.map(m => `
-      <div class="team-member">
-        <div class="member-role">${m.role}</div>
-        <div class="member-photo">${m.image ? `<img src="${m.image}" alt="${m.name}" />` : 'photo'}</div>
-        <div class="member-name">${m.name}</div>
-        <div class="member-bio">${m.bio}</div>
-        <div class="member-links">
-          ${(m.links || []).map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="member-link">${l.label} ↗</a>`).join('')}
-        </div>
-      </div>
-    `).join('');
-  }
+  renderMembers(document.getElementById("team-list"), TEAM);
+  renderMembers(document.getElementById("developers-list"), DEVELOPERS);
   const jobBoardContainer = document.getElementById("job-board-list");
   if (jobBoardContainer) {
     if (ROLES.length === 0) {
