@@ -372,7 +372,7 @@ main {
   border-color: var(--ink);
 }
 .cta-action-block { text-align: center; padding: 3rem 0; }
-.cta-action-block h3 { font-size: 1.5rem; font-weight: 700; color: var(--ink); margin-bottom: 1.5rem; }
+.cta-action-block h3 { font-size: 1.5rem; font-weight: 700; color: var(--green); margin-bottom: 1.5rem; }
 .btn-primary-action {
   background: var(--green);
   color: var(--white);
@@ -510,10 +510,10 @@ main {
   width: 214px;
 }
 .member-role {
-  font-size: 0.72rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: var(--ink);
 }
 .member-photo {
@@ -714,5 +714,21 @@ footer {
 @media (max-width: 768px) {
   .featured-img-column { width: 100%; }
   .about-card-text { width: 100%; }
-  .hero-split-grid { min-height: auto; padding: 2rem 0; }
+  .hero-split-grid { min-height: calc(100svh - 4.5rem); padding: 2rem 0; }
+}
+
+@media (max-width: 600px) {
+  .company-list {
+    max-width: 320px;
+    margin-inline: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
+    row-gap: 1.5rem;
+  }
+  .company-list img[alt="Microsoft"],
+  .company-list img[alt="IBM"] {
+    width: 100%;
+    max-width: 140px;
+    height: auto;
+  }
 }

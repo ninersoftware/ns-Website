@@ -330,7 +330,7 @@ function initSubpageLists() {
             <h3 class="job-role-title">${r.title}</h3>
             <p class="job-role-desc">${r.description}</p>
           </div>
-          <a href="${r.formUrl}" target="_blank" rel="noopener noreferrer" class="job-role-apply">Apply ↗</a>
+          <a href="${r.formUrl}" target="_blank" rel="noopener noreferrer" class="job-role-apply">apply ↗</a>
         </div>
       `).join('');
     }
