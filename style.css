@@ -511,8 +511,8 @@ main {
 }
 .member-role {
   font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-weight: 700;
+  letter-spacing: -0.0s1em;
   text-transform: lowercase;
   color: var(--ink);
 }
