@@ -299,6 +299,7 @@ main {
 }
 .featured-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   align-items: center;
 }
@@ -595,10 +596,10 @@ footer {
   .mobile-menu-popup { display: flex; margin-right: 0.35rem; }
   .hero-split-grid { flex-direction: column; min-height: 85vh; padding-top: 1rem; padding-bottom: 3rem; gap: 1rem; justify-content: center; align-items: center; }
   .hero-left { display: contents; }
-  .hero-subtitle { font-size: clamp(1.1rem, 4vw, 1.5rem); text-align: center; order: 1; margin-bottom: -1.5rem; opacity: 1;}
-  .hero-watermark { display: flex; justify-content: center; font-size: 75vw; opacity: 1; color: var(--green); width: 100%; order: 2; margin-bottom: 7rem; letter-spacing: normal; }
+  .hero-subtitle { font-size: clamp(1.1rem, 4vw, 1.5rem); text-align: center; order: 1; margin: 0; }
+  .hero-watermark { display: flex; justify-content: center; font-size: min(65vw, 18rem); width: 100%; order: 2; margin: 1rem 0; padding: 0; transform: none; letter-spacing: -0.06em; }
   .watermark-s { display: inline-block; margin-left: -0.03em; }
-  .hero-main-title { text-align: center; opacity: 1; order: 3; margin-top: -9.5rem;}
+  .hero-main-title { text-align: center; order: 3; margin: 0; max-width: 100%; font-size: clamp(2rem, 8.5vw, 3rem); }
   .hero-right-credibility { font-size: 12px; text-align: center; order: 4; }
   .hero-layout { gap: 3rem; padding-bottom: 3rem; }
   .featured-outer-header h2 { text-align: center; }
@@ -614,7 +615,7 @@ footer {
   .featured-card-flex { flex-direction: column-reverse; gap: 2rem; align-items: center; }
   .image-display-frame { width: 100%; max-width: 100%; }
   .featured-info { align-items: center; text-align: center; }
-  .project-name { text-align: center; display: none; }
+  .project-name { text-align: center; }
   .project-desc { text-align: center; }
   .featured-links { justify-content: center; }
   .about-card-text { align-items: flex-start; text-align: center; }
@@ -703,4 +704,15 @@ footer {
 @media (max-width: 600px) {
   .press-story-link.has-thumbnail { grid-template-columns: 1fr; gap: 1rem; }
   .press-announcement { grid-template-columns: 1fr; gap: 0.25rem; }
+}
+
+/* Bound media to its containing column, including narrow phone screens. */
+.featured-img-column { min-width: 0; max-width: 100%; }
+.image-display-frame, .project-list-img-frame { max-width: 100%; }
+.featured-info, .about-card-text { min-width: 0; }
+.company-list li::marker { content: ""; }
+@media (max-width: 768px) {
+  .featured-img-column { width: 100%; }
+  .about-card-text { width: 100%; }
+  .hero-split-grid { min-height: auto; padding: 2rem 0; }
 }
