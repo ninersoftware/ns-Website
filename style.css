@@ -620,7 +620,8 @@ footer {
   .featured-links { justify-content: center; }
   .about-card-text { align-items: flex-start; text-align: center; }
   .team-grid { justify-content: center; gap: 2rem; }
-  .team-member { align-items: center; }
+  .member-bio { text-align: center};
+  .team-member { align-items: center; text-align: center }
   footer { flex-direction: column; gap: 1.25rem; align-items: center; padding-bottom: 2rem; text-align: center; }
   .footer-links { justify-content: center; width: 100%; gap: 1rem 1.5rem; }
   .footer-copyright { text-align: center; width: 100%; }
