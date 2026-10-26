@@ -157,6 +157,16 @@ const TEAM = [
 // Use a local photo path, and remove any profile links you do not need.
 const DEVELOPERS = [
  {
+    name: "Zachary Gogluicci",
+    image: "assets/zach.png",
+    role: "Full-Stack",
+    bio: "Junior student studying Computer Science. Ported Niner Registration development to Firefox.",
+    links: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/in/zachary-gogluicci/" },
+      { label: "GitHub", url: "https://github.com/zagog629" }
+    ]
+ }, 
+ {
     name: "Chand Mallangi",
     image: "assets/chandpng.png",
     role: "Full-Stack",
