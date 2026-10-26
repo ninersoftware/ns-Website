@@ -42,7 +42,7 @@ const PROJECTS = [
     active: true,
     links: [
       { label: "Chrome Web Store", url: "https://chromewebstore.google.com/detail/ninerratings/fiboihoabbagmckkhjbbeiaoiiimfaec?hl=en-US&pli=1" },
-      { label: "Firefox", url: "https://addons.mozilla.org/en-US/firefox/addon/ninerratings/"},
+      { label: "Firefox", url: "https://addons.mozilla.org/en-US/firefox/addon/niner-registration/"},
       { label: "GitHub", url: "https://github.com/ninersoftware/niner-registration" }
     ]
   },
